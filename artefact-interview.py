@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 # This code was written and tested in the standard implementation of Python 3.11.3. Execution on alternative implementations like pypy has not been tested.
 
+#Problem 1: Polygon Optimisation
+
 # Intermediate points are not necessary for the polygon. 
 # Lines only need two points: endpoint and start point if they are vectors, or point A and B if they are not.
 # Removing intermediate points simplifies the polygon. [(1,1),(1,2),(1,3),(1,4),(2,4),(3,4),(4,4)] --> [(1,1),(1,4),(4,4)].
 # Points can be aligned on the X or Y axis.
-
 
 def remove_intermediate_points(list):
     if len(list) <= 2:# Empty lists or lists containing a single element do not require simplification.
@@ -35,9 +36,22 @@ new_list_points = remove_intermediate_points(list_points)
 print("original list", list_points)
 print("optimized list", new_list_points)
 
+#Problem 2: Incorrect syntax with brackets
 
+#For the described problem, it is only necessary to indicate the incorrect use of delimiters.
+#Balanced delimiters have an equal number of delimiters.
 
+#Function to check the correct use of delimiters
+def verify_syntax(string):
+    if string.count("(") != string.count(")"): #Verifies if the number of characters is balanced.
+        return False #if is incorrect
+    elif len(string) == 0: #If the input is empty.
+        return "Null"
+    else :
+        return True #if is correct
 
+string = "()(()())"
+print ("verify sintax:", verify_syntax(string))
 
 
 
