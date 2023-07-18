@@ -17,7 +17,7 @@ def remove_intermediate_points(list):
     # Iterates through the list of points starting from the second element (element 0 is the initial point).
     for i in range(1, len(list) - 1):
         # Checks if the current point is aligned with the adjacent points, if is not, adds it.
-        if not esta_alinhado(list[i-1], list[i], list[i+1]):
+        if not is_aligned(list[i-1], list[i], list[i+1]):
             new_list.append(list[i]) 
 
     # Adds the last point to the new list.
@@ -25,7 +25,7 @@ def remove_intermediate_points(list):
 
     return new_list
 
-def esta_alinhado(ponto_anterior, ponto_referencia, ponto_posterior):
+def is_aligned(ponto_anterior, ponto_referencia, ponto_posterior):
     # Checks if the points are aligned.
     return (ponto_referencia[0] - ponto_anterior[0]) * (ponto_posterior[1] - ponto_referencia[1]) == (ponto_posterior[0] - ponto_referencia[0]) * (ponto_referencia[1] - ponto_anterior[1])
 
